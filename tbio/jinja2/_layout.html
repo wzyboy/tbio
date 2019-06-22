@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ static('style.css') }}" type="text/css" />
+  {% block head_more %}{% endblock %}
+  <title>{% block title %}{% endblock %}</title>
+</head>
+  <body>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="{{ url('index') }}">index</a></li>
+      <li><a href="{{ url('recent') }}">recent</a></li>
+      <li><a href="{{ url('search') }}">search</a></li>
+      <li><a href="{{ url('sync') }}">sync</a></li>
+      <li><a href="{{ url('admin:index') }}">admin</a></li>
+    </ul>
+  </nav>
+
+  <section class="main">{% block body %}{% endblock %}</section>
+
+  <footer>
+  {% block footer %}{% endblock %}
+  </footer>
+
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{% extends '_layout.html' %}
+
+{% block title %}Recent{% endblock %}
+
+{% block body %}
+<h1>Recent Changes</h1>
+  <p>Showing a max of {{ recent_changes_limit }} record(s).</p>
+  <ul>
+{% for item in recent_changes %}
+    <li><time datetime="{{ item.change_date }}" title="{{ item.change_date }}">{{ humanize.naturaltime(item.change_date) }}</time>: <a href="{{ url('user', args=[item.screen_name]) }}">@{{ item.screen_name }}</a> changed their {{ item.fields }}.</li>
+{% endfor %}
+  </ul>
+{% endblock %}

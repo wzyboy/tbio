@@ -1,0 +1,10 @@
+<article class="profile">
+{% if user_details is defined %}
+    <a href="https://twitter.com/{{ user.screen_name }}">
+      <img src="{{ user_details.get('profile_image_url_https', '') }}" />
+    </a>
+{% endif %}
+    <h3>{{ user.name }} <small><a href="{{ url('user', args=[user.screen_name]) }}">@{{ user.screen_name }}</a></small></h3>
+    <p>{{ user.description }}</p>
+    <p><small>Location: {{ user.location }}</small><br><small>URL: {{ urlize(user.url) | safe }}</small></p>
+</article>

@@ -1,0 +1,29 @@
+{% extends '_layout.html' %}
+
+{% block title %}
+{% if keyword %}
+Search "{{ keyword }}" ({{ users | length }})
+{% else %}
+Search
+{% endif %}
+{% endblock %}
+
+
+{% block body %}
+
+  <section class="search-box">
+    <form action="" method="get">
+      <input type="text" name="q" value="{{ keyword }}" required />
+      <input type="submit" value="Search" />
+    </form>
+  </section>
+
+  <hr />
+
+  <section class="users">
+  {%- for user in users %}
+  {% include '_profile.html' %}
+  {%- endfor %}
+  </section>
+
+{% endblock %}

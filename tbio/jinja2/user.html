@@ -1,0 +1,16 @@
+{% extends '_layout.html' %}
+
+{% block title %}User{% endblock %}
+
+{% block head_more %}
+<style>
+{{ diff_css | safe }}
+</style>
+{% endblock %}
+
+{% block body %}
+<h1>User @{{ user.screen_name }}</h1>
+{% include '_profile.html' %}
+<h2>History</h2>
+{{ diff_html | safe }}
+{% endblock %}

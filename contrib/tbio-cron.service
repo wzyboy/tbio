@@ -1,0 +1,5 @@
+[Service]
+Type=oneshot
+WorkingDirectory=/home/wzyboy/apps/tbio
+ExecStart=/home/wzyboy/apps/tbio/venv/bin/python manage.py load_friends wzyboy --source api --clean-up
+#ExecStart=/usr/bin/curl -fsS --retry 3 https://hc-ping.com/XXXXXXXX

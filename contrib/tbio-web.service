@@ -1,0 +1,8 @@
+[Service]
+Type=notify
+WorkingDirectory=/home/wzyboy/apps/tbio
+ExecStart=/home/wzyboy/apps/tbio/venv/bin/uwsgi uwsgi.ini
+KillSignal=SIGQUIT
+
+[Install]
+WantedBy=default.target
