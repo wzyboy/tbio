@@ -15,19 +15,7 @@ $ (venv) ./manage.py migrate
 $ (venv) ./manage.py runserver
 ```
 
-For production deployment, use uWSGI and Nginx instead (DEBUG=False):
-
-```bash
-$ (venv) pip install -r uwsgi
-$ (venv) ./manage.py collectstatic
-$ (venv) uwsgi uwsgi.ini
-```
-
-```nginx
-location /tbio {
-  proxy_pass http://127.0.0.1:3026;
-}
-```
+For production deployment, use [Gunicorn](https://docs.gunicorn.org/en/stable/deploy.html).
 
 ## Setup
 
