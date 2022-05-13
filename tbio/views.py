@@ -47,7 +47,7 @@ class RecentView(View):
             [:recent_changes_limit]
         )
         previous_records = [r.prev_record for r in records]
-        deltas = [new.diff_against(old) for new, old in zip(records, previous_records)]
+        deltas = [new.diff_against(old, excluded_fields=['_json']) for new, old in zip(records, previous_records)]
         recent_changes = []
         for record, delta in zip(records, deltas):
             fields = ', '.join(c.field for c in delta.changes)
