@@ -74,7 +74,7 @@ class Command(BaseCommand):
 
         # Clean up duplicate history records
         if kwargs['clean_up']:
-            call_command('clean_duplicate_history', '--auto', '-m', '60', verbosity=0)
+            call_command('clean_duplicate_history', '--auto', '-m', '60', '--excluded_fields', '_json', verbosity=0)
 
         # Create sync record
         ts_end = time.time()
